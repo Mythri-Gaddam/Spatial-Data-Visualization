@@ -1,0 +1,65 @@
+<kml>
+<Document>
+<Style id="z1">
+<IconStyle><Icon>
+<href>http://www.google.com/intl/en_us/mapfiles/ms/micons/blue-dot.png</href></Icon>
+</IconStyle>
+</Style>
+
+<Placemark>
+<name>Home</name>
+<styleUrl>#z1</styleUrl>
+<Point><coordinates>-118.286681,34.032174</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<name>The Dunes</name>
+<styleUrl>#z1</styleUrl>
+<Point><coordinates>-118.287338,34.028218</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<name>Ralphs</name>
+<styleUrl>#z1</styleUrl>
+<Point><coordinates>-118.290803,34.032139</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<name>2717 Orchard</name>
+<styleUrl>#z1</styleUrl>
+<Point><coordinates>-118.287769,34.029896</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<name>Art of Living</name>
+<styleUrl>#z1</styleUrl>
+<Point><coordinates>-118.283705,34.030565</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<name>Manas</name>
+<styleUrl>#z1</styleUrl>
+<Point><coordinates>-118.291797,34.028898</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<name>Study Hall</name>
+<styleUrl>#z1</styleUrl><Point><coordinates>-118.284346,34.028859</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<name>USC Village</name>
+<styleUrl>#z1</styleUrl>
+<Point><coordinates>-118.285181,34.025521</coordinates></Point>
+</Placemark>
+
+<Placemark>
+<name>Lyon Center</name>
+<styleUrl>#z1</styleUrl>
+<Point><coordinates>-118.288381,34.0244000</coordinates></Point>
+</Placemark>
+
+
+
+</Document>
+</kml>

@@ -1,0 +1,26 @@
+Table Creation:
+CREATE TABLE HW(
+NAME VARCHAR(15),
+LOCATION GEOMETRY);
+
+INSERT INTO HW (name, location) VALUES('Home', ST_SetSRID(ST_MakePoint(-118.286681,  34.032174), 4326));
+INSERT INTO HW (name, location) VALUES('Study Hall', ST_SetSRID(ST_MakePoint(-118.284346, 34.028859), 4326));
+INSERT INTO HW (name, location) VALUES('Ralphs', ST_SetSRID(ST_MakePoint(-118.290803,  34.032139), 4326));
+INSERT INTO HW (name, location) VALUES('2717 Orchard', ST_SetSRID(ST_MakePoint(-118.287769, 34.029896), 4326));
+INSERT INTO HW (name, location) VALUES('Art of Living', ST_SetSRID(ST_MakePoint(-118.283705, 34.030565), 4326));
+INSERT INTO HW (name, location) VALUES('Manas', ST_SetSRID(ST_MakePoint( -118.291797, 34.028898), 4326));
+INSERT INTO HW (name, location) VALUES('USC Village', ST_SetSRID(ST_MakePoint(-118.285181, 34.025521), 4326));
+INSERT INTO HW (name, location) VALUES('The Dunes', ST_SetSRID(ST_MakePoint( -118.287338, 34.028218), 4326));
+INSERT INTO HW (name, location) VALUES('Lyon Center', ST_SetSRID(ST_MakePoint( -118.288381, 34.0244000), 4326));
+
+
+
+--Q1. 
+SELECT ST_AsText(ST_ConvexHull(ST_Collect(LOCATION))) as Convex_Hull from HW;
+
+--Q2. 3 Nearest Neighbors
+SELECT location1, location2, ST_AsText(a_location) as Home,  ST_AsText(b_location) as Loc FROM (SELECT location1, location2, a_location, b_location, dist, rank() over (partition by location1 order by dist asc) as rank FROM (SELECT a.name AS location1, b.name AS location2, a.location as a_location, b.location as b_location,ST_Distance(a.location, b.location) AS dist
+FROM HW AS a , HW AS b WHERE a.name like 'Home' and a.name != b.name) AS T1) AS T2 WHERE rank<4 ORDER BY rank;
+
+
+
